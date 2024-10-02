@@ -19,7 +19,7 @@ const swaggerSpec = {
             version: '1.0.0',
         }
     },
-    apis: ['src/V1/routes/*.routes.js'],
+    apis: ['src/V1/routes/users.routes.js', 'src/V1/routes/tasks.routes.js'],
 }
 
 
