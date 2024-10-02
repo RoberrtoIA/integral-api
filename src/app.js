@@ -7,6 +7,7 @@ import taskRoutes from './V1/routes/tasks.routes.js'
 const app = express()
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use('/api/v1/usuarios', userRoutes);
 app.use('/api/v1/tareas', taskRoutes);
 
@@ -18,10 +19,14 @@ const swaggerSpec = {
             version: '1.0.0',
         }
     },
-    apis: ['./api/v1/routes/*.js'],
+    apis: ['src/V1/routes/*.routes.js'],
 }
 
 
 app.use('/api/v1/api-docs',swaggerUI.serve, swaggerUI.setup(swaggerJSdoc(swaggerSpec)))
+app.get('api/v1/api-docs-json', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(swaggerSpec)
+})
 
 export default app
