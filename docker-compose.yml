@@ -1,15 +1,33 @@
+networks:
+  mynetworkapi:
+
 services:
+  mssql_db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    ports:
+      - '1434:1433'
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=C0mpl3x!Password#2024
+    networks:
+      - mynetworkapi
   nodejs-api:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '3000:3000'
-    # environment:
-    #   - DATABASE_NAME=integral
-    #   - SERVER=localhost
-    #   - PORT=1433
-    #   - USER=roberto99
-    #   - PASSWORD=roberto99
+      - '3001:3000'
+    environment:
+      - DATABASE_NAME=integral
+      - SERVER=mssql_db
+      - PORT=1434
+      - USER=sa
+      - PASSWORD=C0mpl3x!Password#2024
+    networks:
+      - mynetworkapi
+    depends_on:
+      - mssql_db
     volumes:
       - ./src:/user/src/app/src

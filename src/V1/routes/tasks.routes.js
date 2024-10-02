@@ -41,46 +41,39 @@ const router = Router();
 
 /**
  * @openapi
- * /api/v1/usuarios:
+ * /api/v1/tareas:
  *   get:
  *     tags:
- *       - Listar Usuarios
+ *       - Listar Tareas
  *     responses:
  *       200:
- *         description: Lista los usuarios existentes
+ *         description: Devuelve una tarea
  *         content:
  *           application/json:
  *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: integer
- *                     example: 1
- *                   nombre:
- *                     type: string
- *                     example: "Sofia"
- *                   apellido:
- *                     type: string
- *                     example: "Ramirez"
- *                   correo:
- *                     type: string
- *                     example: "sofia.ramirez@gmail.com"
- *                   numero_telefonico:
- *                     type: string
- *                     example: "+54 9 11 4567 8912"
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                   example: 1
+ *                 tarea:
+ *                   type: string
+ *                   example: "Lorem Ipsum"
+ *                 estado:
+ *                   type: string
+ *                   example: "Completado"
+ *                 usuario_id:
+ *                   type: integer
+ *                   example: 1
  *             example:
  *               - id: 1
- *                 nombre: "Sofia"
- *                 apellido: "Ramirez"
- *                 correo: "sofia.ramirez@gmail.com"
- *                 numero_telefonico: "+54 9 11 4567 8912"
+ *                 tarea: "Lorem Ipsum 1"
+ *                 estado: "Completado"
+ *                 usuario_id: 1
  *               - id: 2
- *                 nombre: "Mateo"
- *                 apellido: "Gonzales"
- *                 correo: "mateo.gonzales@gmail.com"
- *                 numero_telefonico: "+34 654 321 0987"
+ *                 tarea: "Lorem Ipsum 2"
+ *                 estado: "No Completado"
+ *                 usuario_id: 1
  */
 router.get("/", getTasks);
 

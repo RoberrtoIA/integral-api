@@ -4,11 +4,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const dbSettings = {
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    server: process.env.SERVER,
-    port: +process.env.PORT,         
-    database: process.env.DATABASE_NAME,
+    user: 'sa',
+    password: 'C0mpl3x!Password#2024',
+    server: 'mssql_db',
+    port: 1433,         
+    database: 'integral',
     options: {
         encrypt: false,
         trustServerCertificate: true,
