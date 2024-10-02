@@ -1,0 +1,15 @@
+services:
+  nodejs-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    # environment:
+    #   - DATABASE_NAME=integral
+    #   - SERVER=localhost
+    #   - PORT=1433
+    #   - USER=roberto99
+    #   - PASSWORD=roberto99
+    volumes:
+      - ./src:/user/src/app/src
