@@ -2,6 +2,7 @@ import { getConnection } from '../database/connection.js';
 import { transformStatus } from '../helpers/transformStatus.js';
 import sql from 'mssql';
 
+// Index
 export const getUsers = async (req, res) => {
 
     const pool = await getConnection()
@@ -10,6 +11,7 @@ export const getUsers = async (req, res) => {
     return res.json(result.recordset)
 }
 
+// Show
 export const getUser = async (req, res) => {
 
     const pool = await getConnection()
@@ -26,6 +28,7 @@ export const getUser = async (req, res) => {
     return res.json(result.recordset[0])
 }
 
+// Store
 export const createUser = async (req, res) => {
 
     const pool = await getConnection()
@@ -45,6 +48,7 @@ export const createUser = async (req, res) => {
     })
 }
 
+// ShowTasksByUserId
 export const getUserTasks = async (req, res) => {
 
     const pool = await getConnection()
@@ -54,14 +58,14 @@ export const getUserTasks = async (req, res) => {
 
     if (result.rowsAffected[0] === 0) {
         return res.status(404).json({
-            message: "Usuario no encontrado"
+            message: "Usuario no encontrado o sin tareas asociadas"
         });
     }
 
     return res.json(transformStatus(result))
-    // return res.json(result.recordset)
 }
 
+// Update
 export const updateUser = async (req, res) => {
 
     const pool = await getConnection()
@@ -87,14 +91,13 @@ export const updateUser = async (req, res) => {
     })
 }
 
+// Delete
 export const deleteUser = async (req, res) => {
     
     const pool = await getConnection()
     const result = await pool.request()
     .input("id", sql.Int, req.params.id)
     .query('DELETE FROM usuarios WHERE id = @id')
-
-    console.log(result)
 
     if (result.rowsAffected[0] === 0) {
         return res.status(404).json({

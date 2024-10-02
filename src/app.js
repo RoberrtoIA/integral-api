@@ -11,6 +11,7 @@ app.use(express.json());
 app.use('/api/v1/usuarios', userRoutes);
 app.use('/api/v1/tareas', taskRoutes);
 
+// Configuración de Swagger
 const swaggerSpec = {
     definition: {
         openapi: '3.0.0',
@@ -22,11 +23,7 @@ const swaggerSpec = {
     apis: ['src/V1/routes/users.routes.js', 'src/V1/routes/tasks.routes.js'],
 }
 
-
+// Endpoint de Swagger UI Documentation
 app.use('/api/v1/api-docs',swaggerUI.serve, swaggerUI.setup(swaggerJSdoc(swaggerSpec)))
-app.get('api/v1/api-docs-json', (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(swaggerSpec)
-})
 
 export default app
