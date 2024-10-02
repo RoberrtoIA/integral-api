@@ -15,7 +15,10 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "morgan": "^1.10.0",
-    "mssql": "^11.0.1"
+    "mssql": "^11.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui": "^5.17.14",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
