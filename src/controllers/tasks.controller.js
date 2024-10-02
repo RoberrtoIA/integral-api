@@ -67,10 +67,12 @@ export const updateTaskStatus = async (req, res) => {
     .input("estado", sql.Int, !estado)
     .query("UPDATE tareas SET estado = @estado WHERE id = @id")
 
+    const updatedStatus = !estado;
+
     return res.json({
         id: req.params.id,
         tarea: resultCheckId.recordset[0].tarea,
-        estado: !estado,
+        estado: updatedStatus ? 'Completado' : 'No Completado',
         usuario_id: resultCheckId.recordset[0].usuario_id
     })
 }
