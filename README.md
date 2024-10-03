@@ -31,3 +31,7 @@ Login: `sa`
 Contraseña: `C0mpl3x!Password#2024`
 
 ![alt text](https://github.com/RoberrtoIA/integral-api/blob/f/docker/tutorial-pngs/1mssql-conect.png)
+
+6. Abra una pestaña de ejecución de sql
+
+![alt text](https://github.com/RoberrtoIA/integral-api/blob/f/docker/tutorial-pngs/2new-query.png)
