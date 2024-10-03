@@ -39,3 +39,7 @@ Login: `sa`
 Contraseña: `C0mpl3x!Password#2024`
 
 ![alt text](https://github.com/RoberrtoIA/integral-api/blob/f/docker/tutorial-pngs/1mssql-conect.png)
+
+9. Abra una nueva pestaña de sql query:
+
+![alt text](https://github.com/RoberrtoIA/integral-api/blob/main/tutorial-pngs/2new-query.png)
