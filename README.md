@@ -13,7 +13,7 @@ Instalación de primer uso
 1. Verifique que tiene docker instalado utilizando el comando `docker --version`.
 Si le muestra la version entonces siga con el paso 2, de lo contrario puede que tenga un problema con la instalacion de `docker`.
 
-2. Ejecute el comando que se muestra a contuniación.
+2. Ejecute el comando que se muestra a continuación.
 
 ```bash
 docker-compose up --build
