@@ -94,4 +94,4 @@ GO
 
 11. Abra el siguiente enlace que lo redirige a la documentación generada gracias al paquete Swagger: [LINK](http://localhost:3001/api/v1/api-docs/)
 
-12. Fin
+12. Es libre de probar los endpoints a voluntad. Fin
