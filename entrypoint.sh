@@ -1,7 +1,2 @@
-#!/bin/bash
-
-# Start the script to create the DB and user
-/usr/config/configure-db.sh &
-
-# Start SQL Server
-/opt/mssql/bin/sqlservr
+# Run Microsoft SQl Server and initialization script (at the same time)
+/usr/src/app/run-initialization.sh & /opt/mssql/bin/sqlservr
