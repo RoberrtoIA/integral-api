@@ -10,20 +10,28 @@ Requerimientos: Docker.
 
 Instalación de primer uso
 
-1. Verifique que tiene docker instalado utilizando el comando `docker --version`.
+1. Clone este mismo repositorio con el siguiente comando en la consola de la pc donde tenga instalado `docker`:
+
+```bash
+git clone https://github.com/RoberrtoIA/integral-api.git
+```
+
+2. Cambie al directorio del proyecto recién clonado: `cd integral-api`
+
+4. Verifique que tiene docker instalado utilizando el comando `docker --version`.
 Si le muestra la version entonces siga con el paso 2, de lo contrario puede que tenga un problema con la instalacion de `docker`.
 
-2. Ejecute el comando que se muestra a contuniación.
+5. Ejecute el comando que se muestra a contuniación.
 
 ```bash
 docker-compose up --build
 ```
 
-3. Espere almenos 90 segundos para serciorarse que los contenedores estan montados.
+6. Espere almenos 90 segundos para serciorarse que los contenedores estan montados.
 
-4. A continuación solo resta crear la base de datos en el contenedor `docker`.
+7. A continuación solo resta crear la base de datos en el contenedor `docker`.
 
-5. Abra su gestor preferido de base de datos de SQL Server como por ejemplo `SQL Server Management Studio` y proceda a conectarse con las siguientes credenciales:
+8. Abra su gestor preferido de base de datos de SQL Server como por ejemplo `SQL Server Management Studio` y proceda a conectarse con las siguientes credenciales:
 
 Servidor: `localhost`
 Puerto: `1434`
